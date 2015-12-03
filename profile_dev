@@ -1,1 +1,44 @@
-/etc/profile_dev
+# For python virtualenv
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+WORKON_HOME=/Users/$USER/Developer/virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh # the answer to  which virtualenvwrapper.
+
+##### Version control commands
+
+############### MERCURIAL ###############
+alias hgpullandup="hg pull -u"
+alias rmorig='find . -name "*.orig" -delete'
+alias removepyc='find . -name "*.pyc" -delete'
+
+##### Program specific commands
+
+#Runs the yuidocs in the current folder and makes it available in the port 5000
+alias yuidocserver='yuidoc . --server 5000'
+
+# Run python tests
+alias testAll='python -m unittest discover testing/'
+
+# run chromium browser with no security mode on
+alias chrome-canary-chrome-no-security='open -a Google\ Chrome\ Canary --args --disable-web-security -–allow-file-access-from-files'
+alias chrome-no-security='open -a Google\ Chrome --args --disable-web-security -–allow-file-access-from-files --profile-directory=Development'
+
+# Git aware prompt (requires https://github.com/jimeh/git-aware-prompt)
+# export HISTTIMEFORMAT="%d/%m/%y %T "
+# export GITAWAREPROMPT=~/.bash/git-aware-prompt
+# source $GITAWAREPROMPT/main.sh
+# export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
+# Use sublime for commands that prompt input (requires sublime and subl being symlinked)
+# export EDITOR='subl -w'
+
+############## COLORDIFF ###############
+#function diff {
+#    colordiff -u "$@" | less -RF
+#}
+alias diff="colordiff"
+
+######## BASH COMPLETION #################
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi

@@ -28,7 +28,7 @@ In the case you want to keep the files organized you should 'include' the new fi
     ...
 
 > This option is recommended because it allows you to maintain organized the files, and use the files you can find in the repository (keeping them up to date, or not).
-You can use system links or setting up the full path to them.
+You can use symbolic links or setting up the full path to them.
 
 ### OSX
 
